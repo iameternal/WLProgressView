@@ -7,7 +7,7 @@
 //
 
 #import "EXLProgressBarView.h"
-#import <Masonry.h>
+#import "Masonry.h"
 
 @implementation EXLProgressBarView
 - (instancetype)initWithFrame:(CGRect)frame {

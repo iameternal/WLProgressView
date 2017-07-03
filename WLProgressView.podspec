@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "WLProgressView"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "自定义的进度条，WLProgressView,可动画播放,可设置bar的圆角效果"
   s.description  = <<-DESC
             进度条
@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
 
   # ――― Project Linking ――――――――――――――――――――――――――――――――――――――――――――
 s.platform = :ios
-s.framework  = 'WLProgressView'
+s.framework = 'UIKit'
+s.framework = 'Foundation'
 s.dependency 'Masonry'
 end
