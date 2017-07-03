@@ -18,8 +18,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT (Version 2.0)"
   s.author             = { "liuyabo" => "liuyabo_weixiao@163.com" }
   s.source       = { :git => "https://github.com/WeiXiaoSmile/WLProgressView.git", :tag => "#{s.version}" }
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "WLProgressView", "WLProgressView/**/*.{h,m}"
 
   # s.public_header_files = "Classes/**/*.h"
 
