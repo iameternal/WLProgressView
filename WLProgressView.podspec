@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    this project provide progress view for iOS developer 
                    DESC
 
-  s.homepage     = "https://github.com/WeiXiaoSmile/WLProgressView"
+  s.homepage     = "https://github.com/iameternal/WLProgressView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/WeiXiaoSmile/WLProgressView.git", :tag => "1.0.2" }
+  s.source       = { :git => "https://github.com/iameternal/WLProgressView.git", :tag => "1.0.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
