@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Masonry.h"
 #import "EXLProgressBarView.h"
 
 @interface ViewController ()
