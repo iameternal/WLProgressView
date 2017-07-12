@@ -2,8 +2,8 @@
 //  EXLProgressBarView.m
 //  ParentGet
 //
-//  Created by liuyabo on 2017/6/29.
-//  Copyright © 2017年 Jack. All rights reserved.
+//  Created by iameternal on 2017/6/29.
+//  Copyright © 2017年 iameternal. All rights reserved.
 //
 
 #import "EXLProgressBarView.h"
