@@ -71,7 +71,7 @@
 - (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies animated:(BOOL)animated {
     if (animated) {
         __block NSInteger count = 0;
-        [NSTimer scheduledTimerWithTimeInterval:interval repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:interval repeats:YES block:^(NSTimer * _Nonnull timer) {
             ++ count;
             if (self.progress == 0) {
                 [timer invalidate];
@@ -91,6 +91,7 @@
                 }
             }
         }];
+        [[NSRunLoop currentRunLoop] addTimer:aTimer forMode:NSRunLoopCommonModes];
     } else {
         if (self.progress == 0) {
             CGRect frame = self.trackTintView.frame;
