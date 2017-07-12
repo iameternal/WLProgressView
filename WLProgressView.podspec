@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WLProgressView"
-  s.version      = "1.0.3"
-  s.summary      = "A short description of WLProgressView.自定义进度条"
+  s.version      = "1.0.5"
+  s.summary      = "A description of WLProgressView.自定义进度条."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                   this project provide progress view for iOS developer 
+                   this project provide progress view for iOS developer.自定义进度条,实现了圆角弧度效果，可选择播放动画效果，需要引用masonry，在podfile中添加pod 'WLProgressView'，执行pod,即可使用。也可直接使用Demo的WLProgressView文件。 
                    DESC
 
   s.homepage     = "https://github.com/iameternal/WLProgressView"
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/iameternal/WLProgressView.git", :tag => "1.0.3" }
+  s.source       = { :git => "https://github.com/iameternal/WLProgressView.git", :tag => "1.0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
