@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC43304B3CCE5D3825968E37 /* libPods-WLProgressView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4AF3ED4AC9EB0491694102 /* libPods-WLProgressView.a */; };
-		D70FB8061F14AFD90013B3E2 /* EXLProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D70FB8051F14AFD90013B3E2 /* EXLProgressBarView.m */; };
+		D70FB8061F14AFD90013B3E2 /* WLProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D70FB8051F14AFD90013B3E2 /* WLProgressBarView.m */; };
 		D74614F71F09DE9E00A4B7E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D74614F61F09DE9E00A4B7E3 /* main.m */; };
 		D74614FA1F09DE9E00A4B7E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D74614F91F09DE9E00A4B7E3 /* AppDelegate.m */; };
 		D74614FD1F09DE9E00A4B7E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74614FC1F09DE9E00A4B7E3 /* ViewController.m */; };
@@ -40,8 +40,8 @@
 		068AADD5C486B2AA956AF5AE /* Pods-WLProgressView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLProgressView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLProgressView/Pods-WLProgressView.debug.xcconfig"; sourceTree = "<group>"; };
 		5F4AF3ED4AC9EB0491694102 /* libPods-WLProgressView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WLProgressView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AD7212104E6790799BD2F3 /* Pods-WLProgressView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLProgressView.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLProgressView/Pods-WLProgressView.release.xcconfig"; sourceTree = "<group>"; };
-		D70FB8041F14AFD90013B3E2 /* EXLProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXLProgressBarView.h; sourceTree = "<group>"; };
-		D70FB8051F14AFD90013B3E2 /* EXLProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXLProgressBarView.m; sourceTree = "<group>"; };
+		D70FB8041F14AFD90013B3E2 /* WLProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLProgressBarView.h; sourceTree = "<group>"; };
+		D70FB8051F14AFD90013B3E2 /* WLProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLProgressBarView.m; sourceTree = "<group>"; };
 		D74614F21F09DE9E00A4B7E3 /* WLProgressView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLProgressView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74614F61F09DE9E00A4B7E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D74614F81F09DE9E00A4B7E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		D70FB8031F14AFD90013B3E2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D70FB8041F14AFD90013B3E2 /* EXLProgressBarView.h */,
-				D70FB8051F14AFD90013B3E2 /* EXLProgressBarView.m */,
+				D70FB8041F14AFD90013B3E2 /* WLProgressBarView.h */,
+				D70FB8051F14AFD90013B3E2 /* WLProgressBarView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74614FD1F09DE9E00A4B7E3 /* ViewController.m in Sources */,
-				D70FB8061F14AFD90013B3E2 /* EXLProgressBarView.m in Sources */,
+				D70FB8061F14AFD90013B3E2 /* WLProgressBarView.m in Sources */,
 				D74614FA1F09DE9E00A4B7E3 /* AppDelegate.m in Sources */,
 				D74614F71F09DE9E00A4B7E3 /* main.m in Sources */,
 			);

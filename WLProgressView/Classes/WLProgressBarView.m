@@ -1,15 +1,15 @@
 //
-//  EXLProgressBarView.m
+//  WLProgressBarView.m
 //  ParentGet
 //
 //  Created by iameternal on 2017/6/29.
 //  Copyright © 2017年 iameternal. All rights reserved.
 //
 
-#import "EXLProgressBarView.h"
+#import "WLProgressBarView.h"
 #import "Masonry.h"
 
-@implementation EXLProgressBarView
+@implementation WLProgressBarView
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -28,17 +28,16 @@
 }
 - (void)layoutSubviews {
     [super layoutSubviews];
-    __weak typeof(self) weakSelf = self;
     [self.progressTintView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(weakSelf.mas_top).offset(0);
-        make.left.mas_equalTo(weakSelf.mas_left).offset(0);
-        make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(0);
-        make.right.mas_equalTo(weakSelf.mas_right).offset(0);
+        make.top.mas_equalTo(self.mas_top).offset(0);
+        make.left.mas_equalTo(self.mas_left).offset(0);
+        make.bottom.mas_equalTo(self.mas_bottom).offset(0);
+        make.right.mas_equalTo(self.mas_right).offset(0);
     }];
     [self.trackTintView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(weakSelf.mas_top).offset(0);
-        make.left.mas_equalTo(weakSelf.mas_left).offset(0);
-        make.bottom.mas_equalTo(weakSelf.mas_bottom).offset(0);
+        make.top.mas_equalTo(self.mas_top).offset(0);
+        make.left.mas_equalTo(self.mas_left).offset(0);
+        make.bottom.mas_equalTo(self.mas_bottom).offset(0);
     }];
 }
 
@@ -71,25 +70,24 @@
 }
 - (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies animated:(BOOL)animated {
     if (animated) {
-        __weak typeof(self) weakSelf = self;
         __block NSInteger count = 0;
         [NSTimer scheduledTimerWithTimeInterval:interval repeats:YES block:^(NSTimer * _Nonnull timer) {
             ++ count;
-            if (weakSelf.progress == 0) {
+            if (self.progress == 0) {
                 [timer invalidate];
-                CGRect frame = weakSelf.trackTintView.frame;
+                CGRect frame = self.trackTintView.frame;
                 frame.size.width = 0;
-                weakSelf.trackTintView.frame = frame;
+                self.trackTintView.frame = frame;
             } else {
-                if ((float)count/copies >= weakSelf.progress) {
+                if ((float)count/copies >= self.progress) {
                     [timer invalidate];
-                    CGRect frame = weakSelf.trackTintView.frame;
-                    frame.size.width = weakSelf.progressTintView.frame.size.width * weakSelf.progress;
-                    weakSelf.trackTintView.frame = frame;
+                    CGRect frame = self.trackTintView.frame;
+                    frame.size.width = self.progressTintView.frame.size.width * self.progress;
+                    self.trackTintView.frame = frame;
                 } else {
-                    CGRect frame = weakSelf.trackTintView.frame;
-                    frame.size.width = weakSelf.progressTintView.frame.size.width * ((float)count/copies);
-                    weakSelf.trackTintView.frame = frame;
+                    CGRect frame = self.trackTintView.frame;
+                    frame.size.width = self.progressTintView.frame.size.width * ((float)count/copies);
+                    self.trackTintView.frame = frame;
                 }
             }
         }];

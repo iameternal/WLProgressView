@@ -1,5 +1,5 @@
 //
-//  EXLProgressBarView.h
+//  WLProgressBarView.h
 //  ParentGet
 //  
 //  Created by iameternal on 2017/6/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EXLProgressBarView : UIView
+@interface WLProgressBarView : UIView
 
 /**
  进度视图

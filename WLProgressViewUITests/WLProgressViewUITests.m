@@ -2,7 +2,7 @@
 //  WLProgressViewUITests.m
 //  WLProgressViewUITests
 //
-//  Created by liuyabo on 2017/7/3.
+//  Created by iameternal on 2017/7/3.
 //  Copyright © 2017年 Exinlei. All rights reserved.
 //
 

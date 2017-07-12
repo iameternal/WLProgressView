@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
-#import "EXLProgressBarView.h"
+#import "WLProgressBarView.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) EXLProgressBarView *progressView;
+@property (strong, nonatomic) WLProgressBarView *progressView;
 
 @end
 
@@ -42,9 +42,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (EXLProgressBarView *)progressView {
+- (WLProgressBarView *)progressView {
     if (!_progressView) {
-        _progressView = [[EXLProgressBarView alloc] init];
+        _progressView = [[WLProgressBarView alloc] init];
     }
     return _progressView;
 }
