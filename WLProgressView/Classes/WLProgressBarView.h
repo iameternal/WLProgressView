@@ -5,6 +5,7 @@
 //  Created by iameternal on 2017/6/29.
 //  Copyright © 2017年 iameternal. All rights reserved.
 //  https://github.com/iameternal/WLProgressView.git
+//  pod 'WLProgressView'
 
 #import <UIKit/UIKit.h>
 
