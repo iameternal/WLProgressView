@@ -31,14 +31,19 @@
  */
 @property (nonatomic) float progress;
 
+/**
+ 定时器
+ */
+@property (strong, nonatomic) NSTimer *aTimer;
 
 /**
- 显示进度条
+ 显示进度条，!cell复用时，播放动画，会有视图重叠的问题，这时需要根据当前cell是否在屏幕内，控制timer的开启和关闭
 
  @param interval 播放的频率
  @param copies 切割的份数
+ @param aProgress 进度
  @param animated 是否有动画
  */
-- (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies animated:(BOOL)animated;
+- (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies progress:(float)aProgress animated:(BOOL)animated;
 
 @end

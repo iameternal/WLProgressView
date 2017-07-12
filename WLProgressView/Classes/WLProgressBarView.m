@@ -63,44 +63,56 @@
     _trackTintView.layer.cornerRadius = cornerRadius;
 }
 - (void)setProgress:(float)progress {
-    _progress = progress;
-    CGRect frame = self.trackTintView.frame;
-    frame.size.width = self.progressTintView.frame.size.width * progress;
-    self.trackTintView.frame = frame;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _progress = progress;
+        CGRect frame = self.trackTintView.frame;
+        frame.size.width = self.progressTintView.frame.size.width * progress;
+        self.trackTintView.frame = frame;
+    });
 }
-- (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies animated:(BOOL)animated {
+- (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies progress:(float)aProgress animated:(BOOL)animated {
     if (animated) {
         __block NSInteger count = 0;
-        NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:interval repeats:YES block:^(NSTimer * _Nonnull timer) {
+        self.aTimer = [NSTimer scheduledTimerWithTimeInterval:interval repeats:YES block:^(NSTimer * _Nonnull timer) {
             ++ count;
-            if (self.progress == 0) {
-                [timer invalidate];
-                CGRect frame = self.trackTintView.frame;
-                frame.size.width = 0;
-                self.trackTintView.frame = frame;
-            } else {
-                if ((float)count/copies >= self.progress) {
+            if (aProgress == 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
                     [timer invalidate];
                     CGRect frame = self.trackTintView.frame;
-                    frame.size.width = self.progressTintView.frame.size.width * self.progress;
+                    frame.size.width = 0;
                     self.trackTintView.frame = frame;
+                });
+            } else {
+                if ((float)count/copies >= aProgress) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [timer invalidate];
+                        CGRect frame = self.trackTintView.frame;
+                        frame.size.width = self.progressTintView.frame.size.width * aProgress;
+                        self.trackTintView.frame = frame;
+                    });
                 } else {
-                    CGRect frame = self.trackTintView.frame;
-                    frame.size.width = self.progressTintView.frame.size.width * ((float)count/copies);
-                    self.trackTintView.frame = frame;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        CGRect frame = self.trackTintView.frame;
+                        frame.size.width = self.progressTintView.frame.size.width * ((float)count/copies);
+                        self.trackTintView.frame = frame;
+                    });
                 }
             }
         }];
-        [[NSRunLoop currentRunLoop] addTimer:aTimer forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] addTimer:self.aTimer forMode:NSRunLoopCommonModes];
     } else {
-        if (self.progress == 0) {
-            CGRect frame = self.trackTintView.frame;
-            frame.size.width = 0;
-            self.trackTintView.frame = frame;
+        if (aProgress == 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CGRect frame = self.trackTintView.frame;
+                frame.size.width = 0;
+                self.trackTintView.frame = frame;
+            });
         } else {
-            CGRect frame = self.trackTintView.frame;
-            frame.size.width = self.progressTintView.frame.size.width * self.progress;
-            self.trackTintView.frame = frame;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CGRect frame = self.trackTintView.frame;
+                frame.size.width = self.progressTintView.frame.size.width * aProgress;
+                self.trackTintView.frame = frame;
+            });
         }
     }
 }
