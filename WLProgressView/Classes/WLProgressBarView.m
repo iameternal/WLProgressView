@@ -15,6 +15,7 @@
     if (self) {
         [self addSubview:self.progressTintView];
         [self.progressTintView addSubview:self.trackTintView];
+        [self.progressTintView addSubview:self.titLabel];
     }
     return self;
 }
@@ -23,6 +24,7 @@
     if (self) {
         [self addSubview:self.progressTintView];
         [self.progressTintView addSubview:self.trackTintView];
+        [self.progressTintView addSubview:self.titLabel];
     }
     return self;
 }
@@ -39,9 +41,15 @@
         make.left.mas_equalTo(self.mas_left).offset(0);
         make.bottom.mas_equalTo(self.mas_bottom).offset(0);
     }];
+    [self.titLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.mas_top).offset(0);
+        make.left.mas_equalTo(self.mas_left).offset(0);
+        make.bottom.mas_equalTo(self.mas_bottom).offset(0);
+        make.right.mas_equalTo(self.mas_right).offset(0);
+    }];
 }
 
-#pragma mark - 懒加载
+#pragma mark - UI
 - (UIView *)progressTintView {
     if (!_progressTintView) {
         _progressTintView = [UIView new];
@@ -56,11 +64,24 @@
     }
     return _trackTintView;
 }
+- (UILabel *)titLabel {
+    if (!_titLabel) {
+        _titLabel = [[UILabel alloc] init];
+        _titLabel.textAlignment = NSTextAlignmentCenter;
+        _titLabel.font = [UIFont systemFontOfSize:15.0];
+        _titLabel.textColor = [UIColor colorWithRed:88/255.0 green:88/255.0 blue:88/255.0 alpha:1.0];
+    }
+    return _titLabel;
+}
+#pragma mark - Attributes
 - (void)setCornerRadius:(CGFloat)cornerRadius {
-    _progressTintView.layer.masksToBounds = YES;
-    _trackTintView.layer.masksToBounds = YES;
-    _progressTintView.layer.cornerRadius = cornerRadius;
-    _trackTintView.layer.cornerRadius = cornerRadius;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _cornerRadius = cornerRadius;
+        _progressTintView.layer.masksToBounds = YES;
+        _trackTintView.layer.masksToBounds = YES;
+        _progressTintView.layer.cornerRadius = cornerRadius;
+        _trackTintView.layer.cornerRadius = cornerRadius;
+    });
 }
 - (void)setProgress:(float)progress {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -68,6 +89,15 @@
         CGRect frame = self.trackTintView.frame;
         frame.size.width = self.progressTintView.frame.size.width * progress;
         self.trackTintView.frame = frame;
+    });
+}
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    if(title == nil || title.length == 0 || title == NULL) {
+        title = @"";
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.titLabel.text = title;
     });
 }
 - (void)displayWithInterval:(float)interval numberOfCopies:(NSInteger)copies progress:(float)aProgress animated:(BOOL)animated {

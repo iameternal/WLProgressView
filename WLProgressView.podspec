@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WLProgressView"
-  s.version      = "1.0.6"
-  s.summary      = "A description of WLProgressView.自定义进度条."
+  s.version      = "1.0.7"
+  s.summary      = "A description of WLProgressView.iameternal.自定义进度条."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -53,9 +53,9 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "liuyabo" => "liuyabo_weixiao@163.com" }
+  s.author             = { "liuyabo" => "iameternal_weixiao@163.com" }
   # Or just: s.author    = "liuyabo"
-  # s.authors            = { "liuyabo" => "liuyabo_weixiao@163.com" }
+  # s.authors            = { "liuyabo" => "iameternal_weixiao@163.com" }
   # s.social_media_url   = "http://twitter.com/liuyabo"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/iameternal/WLProgressView.git", :tag => "1.0.6" }
+  s.source       = { :git => "https://github.com/iameternal/WLProgressView.git", :tag => "1.0.7" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -34,6 +34,7 @@
     }];
     self.progressView.progress = 0.9;
     self.progressView.cornerRadius = 12.0;
+    self.progressView.title = @"标题";
     [self.progressView displayWithInterval:0.01 numberOfCopies:1000 progress:0.9 animated:YES];
 }
 

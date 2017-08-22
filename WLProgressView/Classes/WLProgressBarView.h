@@ -22,6 +22,11 @@
 @property (strong, nonatomic) UIView *trackTintView;
 
 /**
+ 标题标签
+ */
+@property (strong, nonatomic) UILabel *titLabel;
+
+/**
  边角弧度
  */
 @property (assign, nonatomic) CGFloat cornerRadius;
@@ -30,6 +35,11 @@
  进度 0.0~1.0
  */
 @property (nonatomic) float progress;
+
+/**
+ 标题
+ */
+@property (copy, nonatomic) NSString *title;
 
 /**
  定时器
